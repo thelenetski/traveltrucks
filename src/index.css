@@ -1,0 +1,36 @@
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 1440px;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #101828;
+  --main-color2: #475467;
+  --main-color3: #6C717B;
+  --button-color: #E44848;
+  --button-hover-color: #D84343;
+  --favstar-color: #FFC531;
+  --section-elem1-color: #DADDE1;
+  --section-elem2-color: #F2F4F7;
+  --section-elem3-color: #F7F7F7;
+  --section-elem4-color: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /*Прибирає синій фон з елементів при натисканні на мобілці*/
+}

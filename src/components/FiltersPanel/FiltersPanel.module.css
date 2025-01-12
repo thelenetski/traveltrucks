@@ -1,0 +1,67 @@
+.filtersPanel {
+  width: 360px;
+  padding: 16px;
+}
+
+h4,
+h5 {
+  margin-bottom: 8px;
+}
+
+.locationInput input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filterButton {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.filterButton.active {
+  border-color: red;
+}
+
+.searchButton,
+.resetButton {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.searchButton {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.searchButton:hover {
+  background-color: #c0392b;
+}
+
+.resetButton {
+  background-color: #aaa;
+  color: white;
+}
+
+.resetButton:hover {
+  background-color: #888;
+}

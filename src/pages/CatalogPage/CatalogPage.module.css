@@ -1,0 +1,23 @@
+.main {
+    width: 100%;
+    padding: 48px 64px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog {
+    width: 888px;
+}
+
+.catalog ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
