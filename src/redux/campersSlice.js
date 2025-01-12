@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers } from './campersOps';
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchCampers } from "./campersOps";
 
-const handlePending = state => {
+const handlePending = (state) => {
   state.loading = { main: true, outlet: false };
 };
 
@@ -11,9 +11,10 @@ const handleRejected = (state, action) => {
 };
 
 const campersSlice = createSlice({
-  name: 'campers',
+  name: "campers",
   initialState: {
     items: [],
+    favorites: [],
     loading: { main: false, outlet: false },
     error: null,
   },
@@ -21,9 +22,20 @@ const campersSlice = createSlice({
     resetCampers: (state) => {
       state.items = [];
     },
+    addFav: (state, action) => {
+      const existingIndex = state.favorites.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existingIndex !== -1) {
+        state.favorites.splice(existingIndex, 1);
+      } else {
+        state.favorites.push(action.payload);
+      }
+    },
   },
-  
-  extraReducers: builder => {
+
+  extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, handlePending)
       .addCase(fetchCampers.fulfilled, (state, action) => {
@@ -31,10 +43,10 @@ const campersSlice = createSlice({
         state.loading = { main: false, outlet: false };
         state.error = null;
       })
-      .addCase(fetchCampers.rejected, handleRejected)
+      .addCase(fetchCampers.rejected, handleRejected);
   },
 });
 
-export const { resetCampers } = campersSlice.actions;
+export const { resetCampers, addFav } = campersSlice.actions;
 
 export const campersReducer = campersSlice.reducer;

@@ -1,0 +1,50 @@
+.main {
+  width: 100%;
+  padding: 48px 64px;
+}
+
+.descr {
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--main-color2);
+}
+
+.infoGroup {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--section-elem1-color);
+}
+
+.infoGroup button {
+  background: none;
+  border: none;
+  padding: 0;
+  padding-bottom: 22px;
+  margin-right: 40px;
+  margin-bottom: -2px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  border-bottom: 4px solid #ffffff00;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.infoGroup button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.infoGroup .active {
+  border-bottom: 4px solid var(--button-color);
+}
+
+.bottomGroup {
+  display: flex;
+  gap: 40px;
+  margin-top: 44px;
+}

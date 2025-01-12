@@ -1,0 +1,52 @@
+.main {
+  width: 50%;
+}
+
+.reviewBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviewBox span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  margin-right: 16px;
+  background-color: var(--section-elem2-color);
+  color: var(--button-color);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  border-radius: 60px;
+}
+
+.reviewBox p {
+  width: 100%;
+}
+
+.reviewNameStar {
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+
+.reviewNameStar p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--main-color);
+}
+
+.reviewStars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: var(--favstar-color);
+}

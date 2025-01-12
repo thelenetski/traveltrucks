@@ -1,0 +1,95 @@
+.formContainer {
+  width: 50%;
+  margin: 0 auto;
+  padding: 44px 57px;
+  border: 1px solid var(--section-elem1-color);
+  border-radius: 10px;
+}
+
+.formContainer h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 8px;
+  color: var(--main-color);
+}
+
+.formContainer p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--main-color3);
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  height: 60px;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--section-elem3-color);
+  font-size: 16px;
+  color: var(--main-color3);
+  margin-bottom: 14px;
+  resize: none;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submitButton {
+  width: 166px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-color);
+  color: var(--section-elem4-color);
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.submitButton:hover {
+  background-color: var(--button-hover-color);
+  transform: scaleX(1.05);
+}
+
+.datePicker {
+  width: 100%;
+}
+
+.dateCalendar h2 {
+  font-size: 16px;
+}
+
+.dateCalendar {
+  border: 1px solid var(--main-color2);
+  border-radius: 12px;
+}
+
+.dateCalendar .react-datepicker__header {
+  border-radius: 12px;
+  background: none;
+}

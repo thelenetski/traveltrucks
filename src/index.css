@@ -20,17 +20,35 @@ body {
 
   --main-color: #101828;
   --main-color2: #475467;
-  --main-color3: #6C717B;
-  --button-color: #E44848;
-  --button-hover-color: #D84343;
-  --favstar-color: #FFC531;
-  --section-elem1-color: #DADDE1;
-  --section-elem2-color: #F2F4F7;
-  --section-elem3-color: #F7F7F7;
-  --section-elem4-color: #FFFFFF;
+  --main-color3: #6c717b;
+  --button-color: #e44848;
+  --button-hover-color: #d84343;
+  --favstar-color: #ffc531;
+  --section-elem1-color: #dadde1;
+  --section-elem2-color: #f2f4f7;
+  --section-elem3-color: #f7f7f7;
+  --section-elem4-color: #ffffff;
 }
 
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; /*Прибирає синій фон з елементів при натисканні на мобілці*/
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__current-month {
+  font-size: 16px;
+}
+
+.react-datepicker__header {
+  background-color: #f5f5f5;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--main-color2);
+  color: #fff;
+  border-radius: 32px;
 }

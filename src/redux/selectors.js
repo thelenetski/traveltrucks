@@ -1,17 +1,17 @@
-export const selectCampers = state => state.campers.items;
+export const selectCampers = (state) => state.campers.items;
 
-export const selectOutlet = state => state.campers.outlet;
+export const selectOutlet = (state) => state.campers.outlet;
 
-export const selectLoading = state => state.campers.loading;
+export const selectLoading = (state) => state.campers.loading;
 
-export const selectError = state => state.campers.error;
+export const selectError = (state) => state.campers.error;
 
-export const selectFavCampers = state => state.favCampers.favitems;
+export const selectFavCampers = (state) => state.campers.favorites;
 
-export const selectPage = state => state.campers.page;
+export const selectPage = (state) => state.campers.page;
 
-export const selectPagesNav = state => state.campers.showPagesNav;
+export const selectPagesNav = (state) => state.campers.showPagesNav;
 
-export const selectTotalPages = state => state.campers.totalPages;
+export const selectTotalPages = (state) => state.campers.totalPages;
 
-export const selectFilters = state => state.filters.filters;
+export const selectFilters = (state) => state.filters.filters;

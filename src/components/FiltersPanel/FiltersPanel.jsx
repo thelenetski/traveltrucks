@@ -1,10 +1,11 @@
-import { useForm } from 'react-hook-form';
-import css from './FiltersPanel.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { resetFilters, setFilters } from '../../redux/filterSlice';
-import { resetCampers } from '../../redux/campersSlice';
-import { selectFilters } from '../../redux/selectors';
-import FilterLocation from '../FilterLocation/FilterLocation';
+import { useForm } from "react-hook-form";
+import css from "./FiltersPanel.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { resetFilters, setFilters } from "../../redux/filterSlice";
+import { resetCampers } from "../../redux/campersSlice";
+import { selectFilters } from "../../redux/selectors";
+import FilterLocation from "../FilterLocation/FilterLocation";
+import Equipments from "../Equipments/Equipments";
 
 const FiltersPanel = () => {
   const dispatch = useDispatch();
@@ -16,41 +17,36 @@ const FiltersPanel = () => {
       TV: filters.TV || false,
       bathroom: filters.bathroom || false,
       kitchen: filters.kitchen || false,
-      microwave: filters.microwave || false,
-      refrigerator: filters.refrigerator || false,
       form: filters.form || false,
       transmission: filters.transmission || false,
     },
   });
 
-  const equipmentOptions = ['AC', 'TV', 'Bathroom', 'Kitchen', 'Microwave', 'Refrigerator', 'Automatic'];
-  const vehicleTypeOptions = ['Van', 'Fully Integrated', 'Alcove'];
+  const equipmentOptions = ["AC", "Automatic", "Kitchen", "TV", "Bathroom"];
+  const vehicleTypeOptions = ["Van", "Fully Integrated", "Alcove"];
 
-  // Собираем только активные значения фильтров
   const buildActiveFilters = (data) => {
     const activeFilters = {};
 
-    // Записываем выбранные чекбоксы (true)
     equipmentOptions.forEach((key) => {
       if (data.Automatic) {
-        return activeFilters.transmission = 'automatic';
+        return (activeFilters.transmission = "automatic");
       }
       if (data[key]) {
         if (key === "AC" || key === "TV") {
-         return activeFilters[key] = true;
-        } 
+          return (activeFilters[key] = true);
+        }
         activeFilters[key.toLocaleLowerCase()] = true;
-      };
+      }
     });
-
 
     if (data.form) {
       vehicleTypeOptions.forEach((key) => {
-        if (data.form === 'Van') {
-          return activeFilters.form = 'panelTruck';
+        if (data.form === "Van") {
+          return (activeFilters.form = "panelTruck");
         }
-        if (data.form === 'Fully Integrated') {
-          return activeFilters.form = 'fullyIntegrated';
+        if (data.form === "Fully Integrated") {
+          return (activeFilters.form = "fullyIntegrated");
         }
         activeFilters.form = key;
       });
@@ -62,13 +58,13 @@ const FiltersPanel = () => {
   const onSubmit = (data) => {
     dispatch(resetCampers());
     const activeFilters = buildActiveFilters(data);
-    dispatch(setFilters({location: filters.location, ...activeFilters}));
+    dispatch(setFilters({ location: filters.location, ...activeFilters }));
   };
 
   const handleReset = () => {
     reset();
     dispatch(resetFilters());
-};
+  };
 
   return (
     <aside className={css.filtersPanel}>
@@ -81,14 +77,14 @@ const FiltersPanel = () => {
           {equipmentOptions.map((item) => (
             <label
               key={item}
-              className={`${css.filterButton} ${watch(item) ? css.active : ''}`}
+              className={`${css.filterButton} ${watch(item) ? css.active : ""}`}
             >
               <input
                 type="checkbox"
                 {...register(item)}
-                style={{ display: 'none' }}
+                style={{ display: "none" }}
               />
-              {item}
+              <Equipments item={item} />
             </label>
           ))}
         </div>
@@ -100,16 +96,16 @@ const FiltersPanel = () => {
             <label
               key={type}
               className={`${css.filterButton} ${
-                watch('form') === type ? css.active : ''
+                watch("form") === type ? css.active : ""
               }`}
             >
               <input
                 type="radio"
                 value={type}
-                {...register('form')}
-                style={{ display: 'none' }}
+                {...register("form")}
+                style={{ display: "none" }}
               />
-              {type}
+              <Equipments item={type} />
             </label>
           ))}
         </div>
@@ -118,11 +114,7 @@ const FiltersPanel = () => {
         <button className={css.searchButton} type="submit">
           Search
         </button>
-        <button
-          className={css.resetButton}
-          type="button"
-          onClick={handleReset}
-        >
+        <button className={css.resetButton} type="button" onClick={handleReset}>
           Reset
         </button>
       </form>

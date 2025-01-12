@@ -1,11 +1,34 @@
 .filtersPanel {
   width: 360px;
-  padding: 16px;
 }
 
-h4,
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h4 {
+  width: 100%;
+  margin: 0;
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--main-color2);
+}
+
 h5 {
-  margin-bottom: 8px;
+  width: 100%;
+  margin: 0;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--main-color);
+  border-bottom: 1px solid var(--section-elem1-color);
 }
 
 .locationInput input {
@@ -19,42 +42,66 @@ h5 {
 .filterGroup {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px 12px;
   margin-bottom: 16px;
 }
 
 .filterButton {
-  padding: 8px 12px;
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #ccc;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-align: center;
+  transition: 0.5s;
+}
+
+.filterButton:hover {
+  box-shadow: 0px 0px 35px #00000020;
 }
 
 .filterButton.active {
   border-color: red;
 }
 
+.filterButton svg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.filterButton p {
+  margin: 0;
+}
+
 .searchButton,
 .resetButton {
-  width: 100%;
-  padding: 10px;
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  padding: 0;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 24px;
+  transition: 0.3s;
 }
 
 .searchButton {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--button-color);
+  color: var(--section-elem4-color);
 }
 
 .searchButton:hover {
-  background-color: #c0392b;
+  background-color: var(--button-hover-color);
 }
 
 .resetButton {
